@@ -85,8 +85,8 @@ galaxyGeometry.setAttribute(
 
 
 
-const innColor = new Color("#47d")
-const outColor = new Color("#d9f")
+const innColor = new Color("#e43")
+const outColor = new Color("#f4f")
 
 const galaxyMaterial = new RawShaderMaterial({
 
@@ -94,7 +94,7 @@ const galaxyMaterial = new RawShaderMaterial({
     uTime: { value: 0 },
     uSize: { value: renderer.getPixelRatio() },
     uBranches: { value: 10 },
-    uRadius: { value: 10 },
+    uRadius: { value: 100 },
     uSpin: { value: Math.PI * 1 },
     uRandomness: { value: 10 },
     uAlphaMap: { value: alphaMap },
@@ -148,7 +148,7 @@ void main() {
   // Rotate (center faster)
   vec3 temp = p;
   float ac = cos(-uTime * (5.0 - st) * 0.1);
-  float as = sin(-uTime * (2.0 - st) * 0.5);
+  float as = sin(-uTime * (5.0 - st) * 0.5);
   p.x = temp.x * ac - temp.z * as;
   p.z = temp.x * as + temp.z * ac;
 
